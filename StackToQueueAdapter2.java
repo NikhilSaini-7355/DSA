@@ -23,7 +23,13 @@ public class StackToQueueAdapter2<T> {
   }
 
   public T remove()
-  { T t;
+  { if(mainS.size()==0)
+    {
+      System.out.println("empty stack");
+      return null;
+    }
+    T t;
+    t = null;
     while(mainS.size()!=0)
     {
         t = mainS.pop();
@@ -32,13 +38,22 @@ public class StackToQueueAdapter2<T> {
             helperS.push(t);
         }
     }
-    mainS = helperS;
-    helperS = new Stack<>();
-    return t;
+    while(helperS.size()!=0)
+    {
+        mainS.push(helperS.pop());
+
+    }
+    return t ;
   }
 
   public T  peek()
-  { T t;
+  {   if(mainS.size()==0)
+    {
+      System.out.println("empty stack");
+      return null;
+    }
+     T t;
+    t = null;
     while(mainS.size()!=0)
     {
         t = mainS.pop();
@@ -46,24 +61,29 @@ public class StackToQueueAdapter2<T> {
             helperS.push(t);
         
     }
-    mainS = helperS;
-    helperS = new Stack<>();
+    while(helperS.size()!=0)
+    {
+        mainS.push(helperS.pop());
+        
+    }
     return t;
   }
 
   public void display()
   {
     while (mainS.size()!=0) {
-        T t = mainS.pop();
+      T t = mainS.pop();
         helperS.push(t);
-       System.out.print(t+"--->>>"); 
+       
     }
 
-    System.out.println("END");
+    
     while(helperS.size()!=0)
-     {
-        mainS.push(helperS.pop());
+     {  T t = helperS.pop();
+        mainS.push(t);
+        System.out.print(t+"--->>>"); 
      }
+     System.out.println("END");
   }
   
     public static void main(String[] args) {

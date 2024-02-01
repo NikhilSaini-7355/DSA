@@ -35,7 +35,7 @@ public class StackToQueueAdapter<T> {
   { if(mainS.size()==0)
     {
         System.out.println("empty Queue");
-        
+        return null;
     }
     return mainS.pop();
   }
@@ -44,7 +44,7 @@ public class StackToQueueAdapter<T> {
   {  if(mainS.size()==0)
     {
         System.out.println("empty Queue");
-        
+        return null;
     }
      return mainS.peek();
   }

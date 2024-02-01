@@ -581,6 +581,14 @@ public void reverse_pointer_recursive()
    tail = temp;
 
 }
+public void reverse_data_recursive_helper()
+{
+   
+}
+public void reverse_data_recursive()
+{
+
+}
 }
 
     public static void main(String[] args) {
