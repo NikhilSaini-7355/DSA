@@ -1,5 +1,5 @@
 package linkedlist; // something new for me
-
+// 4-5 questions still left
 import java.util.*;
 
 class LinkedList
@@ -581,6 +581,10 @@ public void reverse_pointer_recursive()
    tail = temp;
 
 }
+public void palindrome()
+{
+    
+}
 public void reverse_data_recursive_helper()
 {
    
@@ -631,7 +635,5 @@ public void reverse_data_recursive()
     obj3.display();
     obj3.reverse_pointer_recursive();
     obj3.display();
-
-
 }
 }
